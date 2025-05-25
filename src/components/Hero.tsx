@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Bot } from "lucide-react";
+import { Bot } from "lucide-react";
 
 export const Hero = () => {
   const scrollToLeadCapture = () => {
@@ -20,7 +20,7 @@ export const Hero = () => {
         {/* Logo */}
         <div className="mb-8 flex justify-center">
           <img 
-            src="/lovable-uploads/e1e65265-2e87-4f0f-ad4e-333219f6bf74.png" 
+            src="/lovable-uploads/7e4650fb-6083-4023-acfb-62fe0fe237ca.png" 
             alt="COMMARKAI Logo" 
             className="h-16 md:h-20 w-auto"
           />
@@ -28,7 +28,7 @@ export const Hero = () => {
 
         {/* Main headline */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-          Scale Your Business with
+          Scaling Your Business with
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 block">
             AI Agents
           </span>
@@ -52,20 +52,12 @@ export const Hero = () => {
           </div>
           <div className="flex items-center gap-2">
             <Bot className="w-5 h-5 text-indigo-400" />
-            <span>3x Conversion Rates</span>
+            <span>Multiplies Conversion Rates</span>
           </div>
         </div>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button 
-            onClick={scrollToLeadCapture}
-            size="lg" 
-            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300"
-          >
-            Get Your Free AI Agent Demo
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
+        {/* CTA Button */}
+        <div className="flex justify-center">
           <Button 
             variant="outline" 
             size="lg"
@@ -77,7 +69,7 @@ export const Hero = () => {
 
         {/* Trust indicators */}
         <div className="mt-16 text-gray-400">
-          <p className="mb-4">Trusted by 500+ Growing Businesses</p>
+          <p className="mb-4">AI agents are trusted by a Growing Business</p>
           <div className="flex justify-center items-center space-x-8 opacity-60">
             <div className="text-sm">★★★★★ 4.9/5 Rating</div>
             <div className="text-sm">|</div>
