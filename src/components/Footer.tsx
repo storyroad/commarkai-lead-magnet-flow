@@ -45,7 +45,6 @@ export const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400">
               <li>support@commarkai.com</li>
-              <li>San Francisco, CA</li>
             </ul>
           </div>
         </div>
