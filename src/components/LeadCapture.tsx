@@ -59,13 +59,6 @@ export const LeadCapture = () => {
                 </div>
               ))}
             </div>
-
-            <div className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
-              <h4 className="font-bold text-lg mb-2">⏰ Limited Time Offer</h4>
-              <p className="text-gray-300">
-                Book this week and get a FREE AI agent setup (worth $2,500) when you qualify for our program.
-              </p>
-            </div>
           </div>
 
           {/* Right side - HubSpot Form */}

@@ -44,15 +44,14 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>hello@commarkai.com</li>
-              <li>+1 (555) 123-4567</li>
+              <li>support@commarkai.com</li>
               <li>San Francisco, CA</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 COMMARKAI. All rights reserved. | Privacy Policy | Terms of Service</p>
+          <p>&copy; 2025 COMMARKAI. All rights reserved. | Privacy Policy | Terms of Service</p>
         </div>
       </div>
     </footer>

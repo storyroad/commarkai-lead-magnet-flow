@@ -17,12 +17,12 @@ export const Hero = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Logo */}
+        {/* Logo - Made 1.5x larger */}
         <div className="mb-8 flex justify-center">
           <img 
             src="/lovable-uploads/7e4650fb-6083-4023-acfb-62fe0fe237ca.png" 
             alt="COMMARKAI Logo" 
-            className="h-16 md:h-20 w-auto"
+            className="h-24 md:h-32 w-auto"
           />
         </div>
 
@@ -56,15 +56,40 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* CTA Button */}
-        <div className="flex justify-center">
-          <Button 
-            variant="outline" 
-            size="lg"
-            className="border-2 border-white text-white hover:bg-white hover:text-purple-900 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
-          >
-            Watch Case Study
-          </Button>
+        {/* AI Workflow Section */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold text-white mb-8">AI-Powered Workflow Integration</h3>
+          <div className="flex flex-wrap justify-center items-center gap-8 mb-8">
+            {/* Social Media Platforms */}
+            <div className="flex items-center gap-4">
+              <img src="/lovable-uploads/6bad3d8f-12eb-4131-918b-eef14efc81b7.png" alt="Facebook" className="w-12 h-12" />
+              <img src="/lovable-uploads/8e563460-cd02-40b2-9930-05b8ea833e3d.png" alt="X (Twitter)" className="w-12 h-12" />
+              <img src="/lovable-uploads/df27a262-d575-4d0b-8138-50b38f5ce81e.png" alt="Messenger" className="w-12 h-12" />
+              <img src="/lovable-uploads/9d2b25a8-5a1f-44f7-98ea-1d44cef9946b.png" alt="WhatsApp" className="w-12 h-12" />
+            </div>
+            
+            {/* Arrow or connector */}
+            <div className="text-white text-2xl">→</div>
+            
+            {/* COMMARKAI Agent */}
+            <div className="flex items-center">
+              <img src="/lovable-uploads/915e724c-7346-47d4-9732-746070b5eeee.png" alt="COMMARKAI Agent" className="w-16 h-16" />
+            </div>
+            
+            {/* Arrow or connector */}
+            <div className="text-white text-2xl">→</div>
+            
+            {/* CRM Systems */}
+            <div className="flex items-center gap-4">
+              <img src="/lovable-uploads/eb14992a-8329-4d34-93f1-d06e292a6e35.png" alt="Salesforce" className="w-12 h-12" />
+              <img src="/lovable-uploads/fcf1dab8-d005-4a16-9da8-1552ecddb485.png" alt="HubSpot" className="w-12 h-12" />
+              <img src="/lovable-uploads/d391af3a-33f9-440e-922d-fe3e61504567.png" alt="CRM Integration" className="w-12 h-12" />
+              <img src="/lovable-uploads/683f4c63-c506-4af2-b9b5-da3a1b9cc2f8.png" alt="MailChimp" className="w-12 h-12" />
+            </div>
+          </div>
+          <p className="text-gray-300 text-lg">
+            Seamlessly integrate across all your platforms for maximum reach and efficiency
+          </p>
         </div>
 
         {/* Trust indicators */}
