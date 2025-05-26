@@ -17,17 +17,17 @@ export const Hero = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Logo - restored to original size with tripled top margin */}
+        {/* Logo - now using headline size with tripled top margin */}
         <div className="mb-8 mt-24 flex justify-center">
           <img 
             src="/lovable-uploads/7e4650fb-6083-4023-acfb-62fe0fe237ca.png" 
             alt="COMMARKAI Logo" 
-            className="h-24 md:h-32 w-auto"
+            className="h-16 md:h-24 lg:h-28 w-auto"
           />
         </div>
 
-        {/* Main headline - restored to original size and AI AGENTS in uppercase */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-16 leading-tight mt-6">
+        {/* Main headline - now using logo size and AI AGENTS in uppercase */}
+        <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-16 leading-tight mt-6">
           Scaling Your Business with
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 block">
             AI AGENTS
@@ -111,7 +111,7 @@ export const Hero = () => {
 
         {/* Trust indicators */}
         <div className="mt-16 text-gray-400">
-          <p className="mb-4">AI agents are trusted by a Growing Business</p>
+          <p className="mb-4">AI agents are trusted by a growing number of businesses</p>
           <div className="flex justify-center items-center space-x-8 opacity-60">
             <div className="text-sm">★★★★★ 4.9/5 Rating</div>
             <div className="text-sm">|</div>
