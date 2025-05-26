@@ -24,7 +24,6 @@ export const SocialProof = () => {
   const stats = [
     { number: "500+", label: "Happy Clients" },
     { number: "$2M+", label: "Revenue Generated" },
-    { number: "98%", label: "Client Satisfaction" },
     { number: "250%", label: "Average ROI" }
   ];
 
@@ -36,7 +35,7 @@ export const SocialProof = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Proven Results That Speak for Themselves
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-2">

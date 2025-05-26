@@ -7,7 +7,7 @@ export const Footer = () => {
           {/* Logo and description */}
           <div className="md:col-span-2">
             <img 
-              src="/lovable-uploads/e1e65265-2e87-4f0f-ad4e-333219f6bf74.png" 
+              src="/lovable-uploads/7e4650fb-6083-4023-acfb-62fe0fe237ca.png" 
               alt="COMMARKAI Logo" 
               className="h-12 w-auto mb-4"
             />
