@@ -17,17 +17,17 @@ export const Hero = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Logo - Made 1.5x larger with tripled top margin */}
+        {/* Logo - restored to original size with tripled top margin */}
         <div className="mb-8 mt-24 flex justify-center">
           <img 
             src="/lovable-uploads/7e4650fb-6083-4023-acfb-62fe0fe237ca.png" 
             alt="COMMARKAI Logo" 
-            className="h-36 md:h-48 w-auto"
+            className="h-24 md:h-32 w-auto"
           />
         </div>
 
-        {/* Main headline - reduced size to 0.75x and AI AGENTS in uppercase */}
-        <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold text-white mb-16 leading-tight mt-6">
+        {/* Main headline - restored to original size and AI AGENTS in uppercase */}
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-16 leading-tight mt-6">
           Scaling Your Business with
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 block">
             AI AGENTS
