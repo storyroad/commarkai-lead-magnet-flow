@@ -50,9 +50,12 @@ export const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 COMMARKAI. All rights reserved. | Privacy Policy | Terms of Service</p>
+          <p>
+            &copy; 2025 COMMARKAI. All rights reserved. |{" "}
+            <a href="#" id="privacy-link">Privacy Policy</a> |{" "}
+            <a href="#" id="terms-link">Terms of Service</a>
+          </p>
         </div>
-      </div>
     </footer>
   );
 };
