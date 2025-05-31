@@ -16,13 +16,13 @@ export const Footer = () => {
               and close deals 24/7. Experience the future of marketing automation.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/company/commarkai/" className="text-gray-400 hover:text-white transition-colors">
                 LinkedIn
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 Twitter
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.facebook.com/commarkai/" className="text-gray-400 hover:text-white transition-colors">
                 Facebook
               </a>
             </div>
