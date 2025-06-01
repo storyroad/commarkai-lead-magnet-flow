@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-12">
@@ -51,23 +53,19 @@ export const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
           <p>
             &copy; 2025 COMMARKAI. All rights reserved. |{" "}
-            <a
-              href="/privacy-policy"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/privacy-policy"
               className="hover:text-white transition-colors"
             >
               Privacy Policy
-            </a>
+            </Link>
             {" | "}
-            <a
-              href="/terms-of-service"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/terms-of-service"
               className="hover:text-white transition-colors"
             >
               Terms of Service
-            </a>
+            </Link>
           </p>
         </div>
       </div>
