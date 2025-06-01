@@ -43,7 +43,14 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>support@commarkai.com</li>
+              <li>
+                <a
+                  href="mailto:support@commarkai.com"
+                  className="hover:text-white underline transition-colors"
+                >
+                  support@commarkai.com
+                </a>
+              </li>
             </ul>
           </div>
         </div>
