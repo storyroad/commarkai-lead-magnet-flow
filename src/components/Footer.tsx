@@ -53,19 +53,19 @@ export const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
           <p>
             &copy; 2025 COMMARKAI. All rights reserved. |{" "}
-            <Link
+            <a
               to="/privacy-policy"
               className="hover:text-white transition-colors"
             >
               Privacy Policy
-            </Link>
+            </a>
             {" | "}
-            <Link
+            <a
               to="/terms-of-service"
               className="hover:text-white transition-colors"
             >
               Terms of Service
-            </Link>
+            </a>
           </p>
         </div>
       </div>
