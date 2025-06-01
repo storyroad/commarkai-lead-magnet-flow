@@ -1,9 +1,4 @@
-import React, { useState } from "react";
-
 export const Footer = () => {
-  const [showPrivacy, setShowPrivacy] = useState(false);
-  const [showTerms, setShowTerms] = useState(false);
-
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,76 +52,24 @@ export const Footer = () => {
           <p>
             &copy; 2025 COMMARKAI. All rights reserved. |{" "}
             <a
-              href="#"
-              id="privacy-link"
-              onClick={e => {
-                e.preventDefault();
-                setShowPrivacy(true);
-              }}
+              href="/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-white transition-colors"
             >
               Privacy Policy
-            </a>{" "}
-            |{" "}
+            </a>
+            {" | "}
             <a
-              href="#"
-              id="terms-link"
-              onClick={e => {
-                e.preventDefault();
-                setShowTerms(true);
-              }}
+              href="/terms-of-service"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-white transition-colors"
             >
               Terms of Service
             </a>
           </p>
         </div>
-
-        {/* Privacy Policy Modal */}
-        {showPrivacy && (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
-            onClick={() => setShowPrivacy(false)}
-          >
-            <div
-              className="bg-white text-gray-900 rounded-lg p-8 max-w-lg w-full relative"
-              onClick={e => e.stopPropagation()}
-            >
-              <button
-                className="absolute top-2 right-2 text-2xl text-gray-400 hover:text-gray-700"
-                onClick={() => setShowPrivacy(false)}
-                aria-label="Close Privacy Policy"
-              >
-                &times;
-              </button>
-              <h2 className="text-2xl font-bold mb-4">Privacy Policy</h2>
-              <p>Your privacy policy content goes here...</p>
-            </div>
-          </div>
-        )}
-
-        {/* Terms of Service Modal */}
-        {showTerms && (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
-            onClick={() => setShowTerms(false)}
-          >
-            <div
-              className="bg-white text-gray-900 rounded-lg p-8 max-w-lg w-full relative"
-              onClick={e => e.stopPropagation()}
-            >
-              <button
-                className="absolute top-2 right-2 text-2xl text-gray-400 hover:text-gray-700"
-                onClick={() => setShowTerms(false)}
-                aria-label="Close Terms of Service"
-              >
-                &times;
-              </button>
-              <h2 className="text-2xl font-bold mb-4">Terms of Service</h2>
-              <p>Your terms of service content goes here...</p>
-            </div>
-          </div>
-        )}
       </div>
     </footer>
   );
