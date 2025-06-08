@@ -1,6 +1,5 @@
-
-import { Button } from "@/components/ui/button";
 import { Bot } from "lucide-react";
+import BookCallButton from "../components/BookCallButton";
 
 export const Hero = () => {
   const scrollToLeadCapture = () => {
@@ -16,18 +15,23 @@ export const Hero = () => {
         <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Logo - slightly bigger than original with tripled top margin */}
-        <div className="mb-8 mt-24 flex justify-center">
+      {/* Header Section with COMMARKAI Logo and Book a Call CTA */}
+      <div className="absolute top-0 left-0 w-full flex justify-between items-center px-6 py-6 z-20">
+        <div className="flex items-center">
           <img 
             src="/lovable-uploads/7e4650fb-6083-4023-acfb-62fe0fe237ca.png" 
             alt="COMMARKAI Logo" 
-            className="h-28 md:h-36 lg:h-40 w-auto"
+            className="h-16 md:h-20 w-auto"
           />
         </div>
+        <div className="flex items-center gap-4">
+          <BookCallButton />
+        </div>
+      </div>
 
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Main headline - back to smaller size and AI AGENTS in uppercase */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-16 leading-tight mt-6">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-16 leading-tight mt-44">
           Scaling Your Business with
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 block">
             AI AGENTS
