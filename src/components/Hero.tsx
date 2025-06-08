@@ -16,7 +16,7 @@ export const Hero = () => {
       </div>
 
       {/* Header Section with COMMARKAI Logo and Book a Call CTA */}
-      <div className="absolute top-0 left-0 w-full flex justify-between items-center px-6 py-6 z-20">
+      <div className="absolute top-0 left-0 w-full flex flex-col sm:flex-row items-start sm:items-center justify-between px-6 py-6 z-20 gap-2 sm:gap-0">
         <div className="flex items-center">
           <img 
             src="/lovable-uploads/7e4650fb-6083-4023-acfb-62fe0fe237ca.png" 
@@ -24,7 +24,7 @@ export const Hero = () => {
             className="h-16 md:h-20 w-auto"
           />
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 mt-2 sm:mt-0">
           <BookCallButton />
         </div>
       </div>
