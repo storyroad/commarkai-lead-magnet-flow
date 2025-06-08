@@ -3,7 +3,7 @@ import React from 'react';
 export default function BookCallButton() {
   const openCalendly = () => {
     window.Calendly.initPopupWidget({
-      url: 'https://calendly.com/your-calendly-link' // Replace with your actual Calendly link!
+      url: 'https://calendly.com/commarkai-support/30min' // Replace with your actual Calendly link!
     });
     return false;
   };
