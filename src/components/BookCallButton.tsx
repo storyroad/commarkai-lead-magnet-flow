@@ -10,7 +10,7 @@ export default function BookCallButton() {
 
   return (
     <button 
-      onClick={openCalendly} className="cta-btn">
+      onClick={openCalendly}
       className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-2 rounded-full font-bold shadow hover:from-purple-600 hover:to-blue-600 transition"
     >
       Book a Call
