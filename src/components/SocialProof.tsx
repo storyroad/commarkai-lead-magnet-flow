@@ -1,20 +1,14 @@
 export const SocialProof = () => {
   const testimonials = [
     {
-      name: "Sarah Chen",
-      title: "CEO, TechStart Solutions",
       quote: "COMMARKAI's AI agents generated 150 qualified leads in our first month. Our conversion rate doubled overnight.",
       result: "150 leads, 2x conversion"
     },
     {
-      name: "Marcus Rodriguez",
-      title: "Founder, GrowthLab",
       quote: "The ROI is incredible. We're saving 50 hours a week while generating 3x more leads than our previous agency.",
       result: "50 hours saved, 3x leads"
     },
     {
-      name: "Emily Foster",
-      title: "Marketing Director, ScaleUp Inc",
       quote: "Our AI agent works 24/7 capturing leads we would have missed. It's like having a sales team that never sleeps.",
       result: "24/7 lead capture"
     }
@@ -77,13 +71,13 @@ export const SocialProof = () => {
                 <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
                   <span className="text-white text-xs">✓</span>
                 </div>
-                <span>SOC 2 Compliant</span>
+                <span></span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
                   <span className="text-white text-xs">✓</span>
                 </div>
-                <span>GDPR Compliant</span>
+                <span>/span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
