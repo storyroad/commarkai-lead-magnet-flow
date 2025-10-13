@@ -1,5 +1,5 @@
 import { Bot } from "lucide-react";
-import BookCallButton from "../components/BookCallButton";
+//import BookCallButton from "../components/BookCallButton";
 
 export const Hero = () => {
   const scrollToLeadCapture = () => {
