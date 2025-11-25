@@ -1,7 +1,18 @@
 {
-  "brandBlue": "#bfd9ee",
-  "brandMaroon": "#8a3b3b",
-  "offWhite": "#f4f5f6",
-  "text": "#111111",
-  "muted": "#4b4b4b"
+  "magicPatterns": {
+    "creamBg": "#f5f3f0",
+    "powderBlue": "#a8c5dd",
+    "softBlue": "#b8d4e8",
+    "lavender": "#c4b5d6",
+    "burgundy": "#8b5a6f",
+    "textPrimary": "#1a1a1a",
+    "textSecondary": "#4a4a4a"
+  },
+  "legacy": {
+    "brandBlue": "#bfd9ee",
+    "brandMaroon": "#8a3b3b",
+    "offWhite": "#f4f5f6",
+    "text": "#111111",
+    "muted": "#4b4b4b"
+  }
 }

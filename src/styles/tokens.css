@@ -1,11 +1,23 @@
 :root {
+  /* MagicPatterns color palette */
+  --cream-bg: #f5f3f0;
+  --powder-blue: #a8c5dd;
+  --soft-blue: #b8d4e8;
+  --lavender: #c4b5d6;
+  --burgundy: #8b5a6f;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  
+  /* Legacy tokens (kept for compatibility) */
   --brand-blue: #bfd9ee;
   --brand-maroon: #8a3b3b;
   --offwhite: #f4f5f6;
   --text: #111111;
   --muted: #4b4b4b;
-  --ff-heading: 'Poppins', 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  --ff-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  
+  /* Typography */
+  --ff-heading: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --ff-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* Example utility -- import into your main CSS or Tailwind config */
