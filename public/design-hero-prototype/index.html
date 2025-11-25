@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CommArk AI - Hero Prototype</title>
+  <style>
+    :root {
+      --brand-blue: #bfd9ee;
+      --brand-maroon: #8a3b3b;
+      --offwhite: #f4f5f6;
+      --text: #111111;
+      --muted: #4b4b4b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--offwhite);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    .hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 90vh;
+      padding: 2rem;
+      overflow: hidden;
+    }
+    /* Rounded blue blocks */
+    .block {
+      position: absolute;
+      background: var(--brand-blue);
+      border-radius: 2rem;
+      opacity: 0.7;
+    }
+    .block-1 { width: 300px; height: 200px; top: 10%; left: -50px; transform: rotate(-12deg); }
+    .block-2 { width: 250px; height: 180px; top: 40%; right: -30px; transform: rotate(8deg); }
+    .block-3 { width: 200px; height: 150px; bottom: 15%; left: 10%; transform: rotate(-5deg); }
+    /* Maroon radial accent */
+    .accent {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--brand-maroon) 0%, transparent 70%);
+      opacity: 0.15;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    /* Content */
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 700px;
+    }
+    .logo-placeholder {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 2rem;
+      background: var(--brand-maroon);
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    h1 {
+      font-family: 'Poppins', 'Montserrat', system-ui, -apple-system, sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    p {
+      font-size: 1.125rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .cta {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: var(--brand-maroon);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .cta:hover { opacity: 0.9; }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.75rem; }
+      p { font-size: 1rem; }
+      .block { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="block block-1"></div>
+    <div class="block block-2"></div>
+    <div class="block block-3"></div>
+    <div class="accent"></div>
+    <div class="content">
+      <div class="logo-placeholder">LOGO</div>
+      <h1>AI-Powered Marketing for Home Service Pros</h1>
+      <p>Grow your business with intelligent automation. CommArk AI helps you attract, convert, and retain customers—without the marketing headaches.</p>
+      <a href="#" class="cta">Get Started Free</a>
+    </div>
+  </section>
+</body>
+</html>
