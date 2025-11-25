@@ -1,41 +1,175 @@
-<!-- Paste this snippet into public/design-hero-prototype/index.html near the bottom
-     so the static prototype visually matches the React footer. -->
-<footer class="bg-gray-900 text-white py-12" aria-labelledby="proto-footer-heading">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 id="proto-footer-heading" class="sr-only">Site footer</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CommArkAI Hero Prototype</title>
+  <!-- 
+    Note: Design tokens are defined in /src/styles/tokens.css
+    This standalone prototype duplicates them for self-contained preview.
+    In production, import tokens.css instead of duplicating.
+  -->
+  <style>
+    /* Duplicated from /src/styles/tokens.css for standalone preview */
+    :root {
+      --brand-blue: #bfd9ee;
+      --brand-maroon: #8a3b3b;
+      --offwhite: #f4f5f6;
+      --text: #111111;
+      --muted: #4b4b4b;
+    }
 
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div class="md:col-span-2">
-        <img src="/lovable-uploads/7e4650fb-6083-4023-acfb-62fe0fe237ca.png" alt="COMMARKAI logo" class="h-12 w-auto mb-4" />
-        <p class="text-gray-400 mb-4 max-w-md">Transform your business with AI agents that generate leads, nurture prospects, and close deals 24/7. Experience the future of marketing automation.</p>
-        <div class="flex space-x-4">
-          <a href="https://www.linkedin.com/company/commarkai/" class="text-gray-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://twitter.com/commarkai" class="text-gray-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Twitter</a>
-          <a href="https://www.facebook.com/commarkai/" class="text-gray-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Facebook</a>
-        </div>
-      </div>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      <div>
-        <h4 class="text-lg font-semibold mb-4">Services</h4>
-        <ul class="space-y-2 text-gray-400">
-          <li><a href="/services/lead-generation-ai" class="hover:text-white transition-colors">Lead Generation AI</a></li>
-          <li><a href="/services/sales-automation" class="hover:text-white transition-colors">Sales Automation</a></li>
-          <li><a href="/services/email-marketing" class="hover:text-white transition-colors">Email Marketing</a></li>
-          <li><a href="/services/social-media-ai" class="hover:text-white transition-colors">Social Media AI</a></li>
-          <li><a href="/services/customer-support" class="hover:text-white transition-colors">Customer Support</a></li>
-        </ul>
-      </div>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--offwhite);
+      color: var(--text);
+      min-height: 100vh;
+    }
 
-      <div>
-        <h4 class="text-lg font-semibold mb-4">Contact</h4>
-        <ul class="space-y-2 text-gray-400">
-          <li><a href="mailto:support@commarkai.com" class="hover:text-white underline transition-colors">support@commarkai.com</a></li>
-        </ul>
+    .hero {
+      position: relative;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    /* Rounded blue blocks background */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      left: -5%;
+      width: 40%;
+      height: 60%;
+      background: var(--brand-blue);
+      border-radius: 2rem;
+      transform: rotate(-5deg);
+      z-index: 0;
+      opacity: 0.7;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 5%;
+      right: -10%;
+      width: 50%;
+      height: 50%;
+      background: var(--brand-blue);
+      border-radius: 2rem;
+      transform: rotate(8deg);
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    /* Maroon radial accent */
+    .maroon-accent {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, var(--brand-maroon) 0%, transparent 70%);
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 800px;
+    }
+
+    .logo-placeholder {
+      width: 120px;
+      height: 120px;
+      background: var(--brand-maroon);
+      border-radius: 1rem;
+      margin: 0 auto 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 0.75rem;
+    }
+
+    h1 {
+      font-family: 'Poppins', 'Montserrat', system-ui, sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--brand-maroon);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(138, 59, 59, 0.3);
+    }
+
+    .note {
+      margin-top: 3rem;
+      padding: 1rem;
+      background: rgba(191, 217, 238, 0.3);
+      border-radius: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="maroon-accent"></div>
+    
+    <div class="hero-content">
+      <div class="logo-placeholder">LOGO</div>
+      
+      <h1>Your AI-Powered Marketing Partner</h1>
+      
+      <p class="subtitle">
+        Transform your marketing with intelligent automation. 
+        CommArkAI helps you create, optimize, and scale your campaigns.
+      </p>
+      
+      <a href="#" class="cta-button">Get Started Free</a>
+      
+      <div class="note">
+        <strong>Prototype Note:</strong> This is a static hero prototype demonstrating the new visual style. 
+        Replace the logo placeholder with your SVG logo and update the content as needed.
       </div>
     </div>
-
-    <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-      <p>&copy; 2025 COMMARKAI. All rights reserved. | <a class="hover:text-white transition-colors" href="/privacy-policy">Privacy Policy</a> | <a class="hover:text-white transition-colors" href="/terms-of-service">Terms of Service</a></p>
-    </div>
-  </div>
-</footer>
+  </section>
+</body>
+</html>
