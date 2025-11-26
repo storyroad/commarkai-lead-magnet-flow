@@ -1,0 +1,25 @@
+{
+  "logo": "/lovable-uploads/7e4650fb-6083-4023-acfb-62fe0fe237ca.png",
+  "logoAlt": "COMMARKAI logo",
+  "description": "Transform your business with AI agents that generate leads, nurture prospects, and close deals 24/7. Experience the future of marketing automation.",
+  "socials": [
+    { "name": "LinkedIn", "href": "https://www.linkedin.com/company/commarkai/" },
+    { "name": "Twitter", "href": "https://twitter.com/commarkai" },
+    { "name": "Facebook", "href": "https://www.facebook.com/commarkai/" }
+  ],
+  "services": [
+    { "title": "Lead Generation AI", "slug": "/services/lead-generation-ai" },
+    { "title": "Sales Automation", "slug": "/services/sales-automation" },
+    { "title": "Email Marketing", "slug": "/services/email-marketing" },
+    { "title": "Social Media AI", "slug": "/services/social-media-ai" },
+    { "title": "Customer Support", "slug": "/services/customer-support" }
+  ],
+  "contact": {
+    "email": "support@commarkai.com",
+    "phone": ""
+  },
+  "legal": {
+    "privacy": "/privacy-policy",
+    "terms": "/terms-of-service"
+  }
+}
