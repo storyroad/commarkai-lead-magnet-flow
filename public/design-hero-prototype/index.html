@@ -1,8 +1,429 @@
-﻿<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Prototype</title></head>
-<body>
-  <h1>Design Prototype</h1>
-  <!-- paste the exported MagicPatterns HTML here if you have it -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COMMARKAI - AI Agents for Business</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --cream-bg: #f5f3f0;
+      --powder-blue: #a8c5dd;
+      --soft-blue: #b8d4e8;
+      --lavender: #c4b5d6;
+      --burgundy: #8b5a6f;
+      --text-primary: #1a1a1a;
+      --text-secondary: #4a4a4a;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      background-color: var(--cream-bg);
+    }
+
+    /* Floating background text animation */
+    @keyframes floatLeft {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    @keyframes floatRight {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    .floating-text {
+      position: absolute;
+      white-space: nowrap;
+      color: rgba(0,0,0,0.03);
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 900;
+      pointer-events: none;
+      user-select: none;
+    }
+    .floating-text-1 { top: 5%; animation: floatLeft 25s linear infinite; }
+    .floating-text-2 { top: 35%; animation: floatRight 30s linear infinite; }
+    .floating-text-3 { top: 65%; animation: floatLeft 28s linear infinite; }
+
+    /* Floating shape animation */
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; transform: scale(0.95); }
+      50% { opacity: 0.5; transform: scale(1.05); }
+    }
+    .floating-shape {
+      position: absolute;
+      background: linear-gradient(135deg, #bfdbfe, #93c5fd);
+      border-radius: 1.5rem;
+      opacity: 0.4;
+      animation: pulse 8s ease-in-out infinite;
+    }
+    .shape-lg { width: 16rem; height: 16rem; top: 10%; left: 5%; animation-delay: 0s; }
+    .shape-md-1 { width: 12rem; height: 12rem; top: 30%; right: 10%; animation-delay: 2s; }
+    .shape-sm { width: 8rem; height: 8rem; bottom: 20%; left: 15%; animation-delay: 4s; }
+    .shape-md-2 { width: 12rem; height: 12rem; bottom: 10%; right: 20%; animation-delay: 1s; }
+
+    /* Burgundy accent blob */
+    @keyframes burgundyPulse {
+      0%, 100% { opacity: 0.2; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 0.4; transform: translate(-50%, -50%) scale(1.2); }
+    }
+    .burgundy-accent {
+      position: absolute;
+      width: 14rem;
+      height: 14rem;
+      background: linear-gradient(135deg, #fda4af, #c4b5dc);
+      border-radius: 50%;
+      filter: blur(40px);
+      top: 50%;
+      right: 5%;
+      animation: burgundyPulse 10s ease-in-out infinite;
+    }
+
+    /* Pill/badge styles */
+    .pill {
+      background: linear-gradient(90deg, #bfdbfe, #c4b5dc);
+      border-radius: 9999px;
+      padding: 0.75rem 2rem;
+      font-weight: 700;
+      color: #1f2937;
+    }
+
+    /* Feature badge */
+    .feature-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    /* Service card */
+    .service-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+    .service-icon {
+      width: 4rem;
+      height: 4rem;
+      background: linear-gradient(135deg, #dbeafe, #ede9fe);
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Platform icon */
+    .platform-icon {
+      background: white;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    /* Form styles */
+    .form-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid #e5e7eb;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-input:focus {
+      border-color: #93c5fd;
+      box-shadow: 0 0 0 3px rgba(191, 219, 254, 0.5);
+    }
+
+    .cta-button {
+      background: #1f2937;
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 1.125rem;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .cta-button:hover {
+      background: #374151;
+    }
+    .cta-button:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <!-- Fixed Background Elements -->
+  <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+    <!-- Floating shapes -->
+    <div class="floating-shape shape-lg"></div>
+    <div class="floating-shape shape-md-1"></div>
+    <div class="floating-shape shape-sm"></div>
+    <div class="floating-shape shape-md-2"></div>
+    <!-- Burgundy accent -->
+    <div class="burgundy-accent"></div>
+  </div>
+
+  <!-- Floating Background Text -->
+  <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+    <div class="floating-text floating-text-1">AI AGENTS • AUTOMATION • SCALE • AI AGENTS • AUTOMATION • SCALE •</div>
+    <div class="floating-text floating-text-2">LEAD GENERATION • CONVERSIONS • LEAD GENERATION • CONVERSIONS •</div>
+    <div class="floating-text floating-text-3">24/7 WORKFLOW • INTELLIGENT • 24/7 WORKFLOW • INTELLIGENT •</div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10">
+    <!-- Header -->
+    <header class="container mx-auto px-6 py-8 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <i data-lucide="bot" class="w-10 h-10 text-gray-900"></i>
+        <span class="text-3xl font-black text-gray-900">COMMARKAI</span>
+      </div>
+      <button class="cta-button">Book a Consultation</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-6 py-20 md:py-32 text-center">
+      <!-- Category Pills -->
+      <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <div class="pill">COMMUNICATIONS</div>
+        <div class="pill">MARKETING</div>
+        <div class="pill">ARTIFICIAL INTELLIGENCE</div>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="font-black text-gray-900 mb-6 leading-tight" style="font-size: clamp(1.875rem, 4vw, 4rem);">
+        Scaling Your Business with
+        <span class="inline-block bg-gradient-to-r from-blue-200 to-purple-200 rounded-3xl px-8 py-2 mt-2">
+          AI AGENTS
+        </span>
+      </h1>
+
+      <!-- Feature Badges -->
+      <div class="flex flex-wrap justify-center gap-6 mb-16 mt-12">
+        <div class="feature-badge">
+          <i data-lucide="bot" class="w-6 h-6 text-blue-500"></i>
+          <span class="text-gray-900 font-semibold">24/7 Lead Generation</span>
+        </div>
+        <div class="feature-badge">
+          <i data-lucide="zap" class="w-6 h-6 text-purple-500"></i>
+          <span class="text-gray-900 font-semibold">Automated Follow-ups</span>
+        </div>
+        <div class="feature-badge">
+          <i data-lucide="trending-up" class="w-6 h-6 text-rose-500"></i>
+          <span class="text-gray-900 font-semibold">Multiplies Conversion Rates</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="container mx-auto px-6 py-20">
+      <div class="mb-16">
+        <div class="text-left max-w-2xl">
+          <p class="text-gray-900 text-2xl font-bold mb-4">MARKETING</p>
+          <h2 class="text-5xl md:text-6xl font-black text-gray-900 mb-4">
+            Artificial<br>Intelligence
+          </h2>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="service-card">
+          <div class="service-icon">
+            <i data-lucide="bot" class="w-8 h-8 text-gray-800"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">24/7 Lead Generation</h3>
+          <p class="text-gray-600 text-lg leading-relaxed">AI agents continuously identify and engage potential customers across all channels, ensuring no opportunity is missed.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i data-lucide="zap" class="w-8 h-8 text-gray-800"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Automated Follow-ups</h3>
+          <p class="text-gray-600 text-lg leading-relaxed">Intelligent agents nurture leads with personalized follow-ups, keeping prospects engaged throughout their journey.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i data-lucide="trending-up" class="w-8 h-8 text-gray-800"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Conversion Optimization</h3>
+          <p class="text-gray-600 text-lg leading-relaxed">Data-driven AI strategies that multiply your conversion rates and maximize ROI across all marketing channels.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="container mx-auto px-6 py-20">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-6">
+          AI-Powered Workflow Integration
+        </h2>
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+          Seamlessly integrate across all your platforms for maximum reach and efficiency
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center items-center gap-8 max-w-5xl mx-auto">
+        <div class="flex flex-col items-center gap-2">
+          <div class="platform-icon"><i data-lucide="facebook" class="w-8 h-8 text-gray-800"></i></div>
+          <span class="text-gray-600 text-sm">Facebook</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="platform-icon"><i data-lucide="message-circle" class="w-8 h-8 text-gray-800"></i></div>
+          <span class="text-gray-600 text-sm">Messenger</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="platform-icon"><i data-lucide="send" class="w-8 h-8 text-gray-800"></i></div>
+          <span class="text-gray-600 text-sm">WhatsApp</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="platform-icon"><i data-lucide="calendar" class="w-8 h-8 text-gray-800"></i></div>
+          <span class="text-gray-600 text-sm">Calendar</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="platform-icon"><i data-lucide="bot" class="w-8 h-8 text-gray-800"></i></div>
+          <span class="text-gray-600 text-sm">AI Agent</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="platform-icon"><i data-lucide="zap" class="w-8 h-8 text-gray-800"></i></div>
+          <span class="text-gray-600 text-sm">Salesforce</span>
+        </div>
+      </div>
+
+      <p class="text-center text-gray-700 text-lg mt-12 font-semibold">And Much More</p>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="container mx-auto px-6 py-20 text-center">
+      <p class="text-gray-700 text-xl mb-8">
+        AI agents are trusted by a growing number of businesses
+      </p>
+      <div class="flex flex-wrap justify-center gap-12 items-center">
+        <div class="text-center">
+          <div class="text-5xl font-black text-gray-900 mb-2">4.9/5</div>
+          <div class="text-gray-600">Rating</div>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl font-black text-gray-900 mb-2">$2M+</div>
+          <div class="text-gray-600">Revenue Generated</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container mx-auto px-6 py-20">
+      <div class="max-w-2xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">Get in Touch</h2>
+          <p class="text-xl text-gray-700">Ready to transform your business with AI? Let's talk.</p>
+        </div>
+
+        <form class="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-semibold text-gray-900 mb-2">Full Name</label>
+            <input type="text" id="name" name="name" class="form-input" placeholder="John Doe">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-semibold text-gray-900 mb-2">Email Address</label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com">
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-semibold text-gray-900 mb-2">Phone Number</label>
+            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+1 (555) 000-0000">
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-semibold text-gray-900 mb-2">Message</label>
+            <textarea id="message" name="message" rows="4" class="form-input resize-none" placeholder="Tell us about your project..."></textarea>
+          </div>
+          <button type="submit" class="cta-button w-full py-4">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 bg-white/50 backdrop-blur-sm">
+      <div class="container mx-auto px-6 py-12">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <!-- Brand -->
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-3 mb-4">
+              <i data-lucide="bot" class="w-8 h-8 text-gray-900"></i>
+              <span class="text-2xl font-black text-gray-900">COMMARKAI</span>
+            </div>
+            <p class="text-gray-600 mb-4 max-w-md">
+              Scaling businesses with intelligent AI agents that work 24/7 to generate leads, nurture prospects, and close deals.
+            </p>
+          </div>
+
+          <!-- Services -->
+          <div>
+            <h4 class="font-bold text-gray-900 mb-4">Services</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">Lead Generation</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">Automated Follow-ups</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">Conversion Optimization</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">Workflow Integration</a></li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h4 class="font-bold text-gray-900 mb-4">Company</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">About Us</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">Case Studies</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">Contact</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p class="text-gray-600 text-sm">© 2024 CommarkAI. All rights reserved.</p>
+          <div class="flex gap-6">
+            <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">
+              <i data-lucide="facebook" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">
+              <i data-lucide="send" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Initialize Lucide Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
